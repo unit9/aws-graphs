@@ -1,0 +1,38 @@
+graphs:
+  cpu:
+    namespace: AWS/EC2
+    region: eu-central-1
+    title: CPU (%)
+    metric: CPUUtilization
+    period: 21600
+    statistics: [Average]
+    dimensions:
+      - name: InstanceId
+        value: i-00000000000000000
+      - name: InstanceId
+        value: i-00000000000000000
+      - name: InstanceId
+        value: i-00000000000000000
+  data_transfer:
+    namespace: AWS/EC2
+    region: eu-central-1
+    title: "Network out [GB] (Total: {sum:.2f} GB)"
+    metric: NetworkOut
+    period: 21600
+    statistics: [Sum]
+    multiplier: 9.313225746154785e-10
+    dimensions:
+      - name: InstanceId
+        value: i-00000000000000000
+  cdn_data_transfer:
+    namespace: AWS/CloudFront
+    region: us-east-1
+    title: "CDN network out [GB] (Total: {sum:.2f} GB)"
+    metric: BytesDownloaded
+    period: 21600
+    statistics: [Sum]
+    multiplier: 9.313225746154785e-10
+    dimensions:
+      - name: DistributionId
+        value: 00000000000000
+        region: Global
